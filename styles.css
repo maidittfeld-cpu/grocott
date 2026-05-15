@@ -856,7 +856,11 @@ h1 em,h2 em,h3 em { font-style:normal; }
   animation:heroFadeUp 0.8s ease 0.2s both;
 }
 
-.hero.hero-video h1 em {
+.hero.hero-video h1 em,
+.hero.hero-video h1 .hero-highlight,
+.page-hero h1 em,
+.page-hero h1 .hero-highlight,
+.page-hero-content h1 .hero-highlight {
   font-style:normal;
   color:var(--color-sand);
   font-weight:700;
@@ -966,9 +970,10 @@ h1 em,h2 em,h3 em { font-style:normal; }
   font-weight:300;
 }
 
-.page-hero h1 em {
-  font-weight:700;
+.page-hero h1 .hero-highlight,
+.page-hero-content h1 .hero-highlight {
   color:var(--color-sand);
+  font-weight:700;
 }
 
 .page-hero-lede {
@@ -3800,9 +3805,13 @@ h1 em,h2 em,h3 em { font-style:normal; }
 
 @media (min-width:900px) {
   .faq-list {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0 3rem;
+    display:block;
+    columns:2;
+    column-gap:3rem;
+  }
+  .faq-item {
+    break-inside:avoid;
+    display:block;
   }
 }
 
